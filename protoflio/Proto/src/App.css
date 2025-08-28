@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding-top: 70px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container,
+.container-fluid,
+.row,
+[class*="col-"] {
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  scroll-margin-top: 70px;
+  padding: 4rem 1rem;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-section {
+  padding-top: 6rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  section {
+    scroll-margin-top: 60px;
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+
+  .hero-section {
+    padding-top: 4rem;
+    min-height: 90vh;
+  }
+}
+
+pre,
+code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+body,
+html {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.absolute-fix {
+  left: 0;
+  right: 0;
+}

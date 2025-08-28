@@ -1,0 +1,541 @@
+.skills-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(139, 92, 246, 0.03) 0%,
+    rgba(239, 68, 68, 0.02) 50%,
+    rgba(139, 92, 246, 0.03) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8b5cf6, #ef4444);
+  opacity: 0.1;
+  animation: floatParticle 15s infinite ease-in-out;
+  filter: blur(1px);
+}
+
+.particle:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  right: 15%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  bottom: 30%;
+  left: 10%;
+  animation-delay: -5s;
+}
+
+.particle:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  top: 60%;
+  right: 25%;
+  animation-delay: -10s;
+}
+
+@keyframes floatParticle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.1;
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg) scale(1.1);
+    opacity: 0.15;
+  }
+  66% {
+    transform: translateY(20px) rotate(240deg) scale(0.9);
+    opacity: 0.12;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(135deg, #ffffff 0%, #8b5cf6 30%, #ef4444 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #ef4444);
+  border-radius: 4px;
+  opacity: 0;
+}
+
+.fade-in .section-title::after {
+  animation: slideIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.8s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    width: 120px;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.fade-in .section-subtitle {
+  animation: fadeIn 1.2s ease forwards 1s;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.skill-item {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #2a2a2a;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.skill-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skill-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skill-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.skill-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.skill-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.skill-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.skill-item:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px) scale(1.05) rotate(2deg);
+  border-color: #8b5cf6;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(139, 92, 246, 0.25);
+}
+
+.skill-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.1),
+    transparent
+  );
+  animation: shine 4s infinite;
+}
+
+.skill-icon {
+  margin-bottom: 1.2rem;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+}
+
+.skill-icon .icon {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.skill-item:hover .skill-image,
+.skill-item:hover .skill-icon .icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.5));
+}
+
+.skill-item:hover .icon.html,
+.skill-item[data-skill="html"]:hover .skill-image {
+  filter: drop-shadow(0 0 15px rgba(227, 79, 38, 0.5));
+}
+
+.skill-item:hover .icon.css,
+.skill-item[data-skill="css"]:hover .skill-image {
+  filter: drop-shadow(0 0 15px rgba(21, 114, 182, 0.5));
+}
+
+.skill-item:hover .icon.js,
+.skill-item[data-skill="js"]:hover .skill-image {
+  filter: drop-shadow(0 0 15px rgba(247, 223, 30, 0.5));
+}
+
+.skill-item:hover .icon.bootstrap,
+.skill-item[data-skill="bootstrap"]:hover .skill-image {
+  filter: drop-shadow(0 0 15px rgba(121, 82, 179, 0.5));
+}
+
+.skill-item:hover .icon.react,
+.skill-item[data-skill="react"]:hover .skill-image {
+  filter: drop-shadow(0 0 15px rgba(97, 218, 251, 0.5));
+}
+
+.skill-item:hover .icon.git,
+.skill-item[data-skill="git"]:hover .skill-image {
+  filter: drop-shadow(0 0 15px rgba(240, 80, 50, 0.5));
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.skill-item:hover .skill-name::after {
+  width: 60px;
+}
+
+.skill-progress {
+  width: 100%;
+  height: 10px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.8rem;
+  position: relative;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #ef4444);
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 150%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+.skills-cta {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+}
+
+.fade-in-delay {
+  animation: fadeIn 1s ease forwards 1.2s;
+}
+
+.skills-cta p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.1rem 2.2rem;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.cta-button:hover::before {
+  animation: shine 1.5s ease;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cta-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+@media (max-width: 1024px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 4rem 0;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .skill-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .skill-item {
+    padding: 1.2rem;
+  }
+
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+.skill-item[data-skill="html"] {
+  --skill-level: 90%;
+}
+.skill-item[data-skill="css"] {
+  --skill-level: 85%;
+}
+.skill-item[data-skill="js"] {
+  --skill-level: 80%;
+}
+.skill-item[data-skill="bootstrap"] {
+  --skill-level: 85%;
+}
+.skill-item[data-skill="react"] {
+  --skill-level: 75%;
+}
+.skill-item[data-skill="git"] {
+  --skill-level: 75%;
+}
+.skill-item[data-skill="responsive"] {
+  --skill-level: 90%;
+}
+.skill-item[data-skill="design"] {
+  --skill-level: 70%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fade-in {
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.skill-percentage {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: block;
+}
+
+.skill-item:hover .skill-percentage {
+  transform: scale(1.2);
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
