@@ -154,8 +154,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-divider"></div>
           <p className="footer-copyright">
-            &copy; {currentYear} Yousef Badr. Built with{" "}
-            <span className="heart">❤️</span> using React & Bootstrap
+            &copy; {currentYear} Yousef Badr. Developed with React and Bootstrap
           </p>
           <button
             className="scroll-top-btn"
@@ -184,3 +183,4 @@ export default function Footer() {
     </footer>
   );
 }
+
