@@ -1,7 +1,7 @@
 export const YOUR_NAME = "Yousef Badr";
 export const TAGLINE =
   "Front-End Web Developer | Building modern web experiences";
-export const EMAIL = "ya053472385@gmail.com";
+export const EMAIL = "amenadialll@gmail.com";
 export const LINKEDIN_URL =
   "https://www.linkedin.com/in/yousef-badr-b1809a353/";
 
@@ -28,3 +28,4 @@ export const projects = [
     repo: "https://github.com/yourgithub/recipes",
   },
 ];
+
